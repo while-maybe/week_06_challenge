@@ -147,9 +147,10 @@ def get_user_choice(options):
     return choice
 
 def main(data):
+    is_running = True
     choices = () # variable needs to be initialized once
     # if there are no tasks, limit the command choices available to the user making add task or exit the only possible choices if there's no data
-    while True: # run indefinitely
+    while is_running: # run indefinitely
         if data: # the data list will evaluate to false if it's empty
             choices = (
                 # create nested tuple for each possible user command - (command, description and which function to call)
@@ -182,7 +183,7 @@ def main(data):
                 choices[4][2](data) # calls del_task() (stored in the choices tuple) and passes data
             case 0:
                 choices[-1][2]()
-                exit() # calls exit_program which is always the last tuple element
+                is_running = False # calls exit_program which is always the last tuple element
         
 # loads only a standalone python program, won't run if called as an external library
 if __name__  == ("__main__"):

@@ -1,10 +1,6 @@
 [
     {
-        "description": "First Again",
-        "status": "pending"
-    },
-    {
-        "description": "A Different Name",
-        "status": "pending"
+        "description": "First Task",
+        "status": "done"
     }
 ]
